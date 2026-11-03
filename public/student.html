@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071321">
+    <title>Join the Learning Analyst Quiz</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/student.js"></script>
+  </head>
+  <body class="student-page">
+    <div class="app-shell student-shell">
+      <header class="app-header student-header">
+        <a class="wordmark" href="/join">THINK LIKE A <span>LEARNING ANALYST</span></a>
+        <span id="studentConnection" class="connection-status" role="status">Ready to join</span>
+      </header>
+
+      <main>
+        <section id="studentJoin" class="student-view join-view" aria-labelledby="studentJoinTitle">
+          <h1 id="studentJoinTitle">Join the quiz</h1>
+          <p class="lead">Enter your name and choose a team.</p>
+          <form id="joinForm" class="student-form">
+            <label class="field-label" for="nameInput">Your name</label>
+            <input id="nameInput" name="name" type="text" maxlength="24" autocomplete="name" required placeholder="Enter your name">
+
+            <label class="field-label" for="codeInput">Room code</label>
+            <input id="codeInput" name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off" required placeholder="6-digit code">
+
+            <fieldset class="team-fieldset">
+              <legend class="field-label">Choose your team</legend>
+              <select id="teamSelect" name="teamId" required></select>
+            </fieldset>
+            <button class="primary-button submit-button" type="submit">Join Quiz</button>
+            <p id="joinError" class="form-error" role="alert"></p>
+          </form>
+        </section>
+
+        <section id="studentWaiting" class="student-view waiting-view hidden" aria-labelledby="waitingTitle">
+          <p class="waiting-team" id="waitingTeam"></p>
+          <h1 id="waitingTitle">You’re in.</h1>
+          <p class="lead">Wait here. The instructor will start the quiz on the projected screen.</p>
+          <div class="waiting-rule"><span id="waitingName"></span><span id="waitingCode"></span></div>
+        </section>
+
+        <section id="studentQuestion" class="student-view student-question-view hidden" aria-labelledby="studentQuestionTitle">
+          <div class="student-question-top">
+            <p id="studentProgress" class="progress-label">Question 1 / 15</p>
+            <output id="studentTimer" class="timer" aria-label="Seconds remaining">25</output>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div id="studentProgressFill" class="progress-fill"></div></div>
+          <p id="studentContext" class="context-copy"></p>
+          <h1 id="studentQuestionTitle"></h1>
+          <div id="studentAnswers" class="student-answer-list" aria-label="Choose an answer"></div>
+          <button id="submitAnswer" class="primary-button submit-button" type="button" disabled>Submit answer</button>
+          <p id="studentAnswerStatus" class="student-answer-status" aria-live="polite"></p>
+        </section>
+
+        <section id="studentRankings" class="student-view student-results hidden" aria-labelledby="studentRankingsTitle">
+          <p id="studentRoundLabel" class="waiting-team"></p>
+          <h1 id="studentRankingsTitle">Class rankings</h1>
+          <p id="studentRoundScore" class="final-score"></p>
+          <p class="lead">The instructor will start the next question when everyone is ready.</p>
+          <section class="student-result-summary">
+            <div>
+              <h2>How the class answered</h2>
+              <div id="studentRoundDistributionList" class="distribution-list"></div>
+            </div>
+            <div>
+              <p id="studentRoundCorrectAnswer" class="correct-answer"></p>
+              <p id="studentRoundExplanation" class="explanation-text"></p>
+            </div>
+          </section>
+          <div class="student-ranking-grid">
+            <section class="ranking-panel" aria-labelledby="studentRoundTeamHeading">
+              <h2 id="studentRoundTeamHeading">Team rankings</h2>
+              <ol id="studentRoundTeamLeaderboard" class="leaderboard compact-leaderboard"></ol>
+            </section>
+            <section class="ranking-panel" aria-labelledby="studentRoundIndividualHeading">
+              <h2 id="studentRoundIndividualHeading">Individual rankings</h2>
+              <ol id="studentRoundIndividualLeaderboard" class="leaderboard compact-leaderboard individual-leaderboard"></ol>
+            </section>
+          </div>
+        </section>
+
+        <section id="studentComplete" class="student-view student-complete hidden" aria-labelledby="studentCompleteTitle">
+          <p class="waiting-team" id="studentFinalTeam"></p>
+          <h1 id="studentCompleteTitle">Quiz complete</h1>
+          <p id="studentFinalScore" class="final-score"></p>
+          <section class="student-result-summary">
+            <div>
+              <h2>Question 15 results</h2>
+              <div id="studentFinalDistributionList" class="distribution-list"></div>
+            </div>
+            <div>
+              <p id="studentFinalCorrectAnswer" class="correct-answer"></p>
+              <p id="studentFinalExplanation" class="explanation-text"></p>
+            </div>
+          </section>
+          <div class="student-ranking-grid">
+            <section class="ranking-panel" aria-labelledby="studentFinalTeamHeading">
+              <h2 id="studentFinalTeamHeading">Team rankings</h2>
+              <ol id="studentLeaderboard" class="leaderboard compact-leaderboard"></ol>
+            </section>
+            <section class="ranking-panel" aria-labelledby="studentFinalIndividualHeading">
+              <h2 id="studentFinalIndividualHeading">Individual rankings</h2>
+              <ol id="studentFinalIndividualLeaderboard" class="leaderboard compact-leaderboard individual-leaderboard"></ol>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">Learning Analytics classroom quiz</footer>
+    </div>
+  </body>
+</html>

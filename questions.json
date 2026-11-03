@@ -1,0 +1,197 @@
+[
+  {
+    "c": "Your teacher opens a dashboard and sees that 5 students are having trouble with fractions.",
+    "q": "What can the teacher do with this information?",
+    "o": [
+      "Give the same homework to everyone",
+      "Give extra help to those 5 students",
+      "Stop teaching fractions",
+      "Remove the students from class"
+    ],
+    "a": 1,
+    "e": "Learning Analytics helps teachers understand learning data and make better decisions.",
+    "s": "Slides 5–6 · Learning Analytics"
+  },
+  {
+    "c": "An online learning system checks students' answers and automatically selects easier or harder exercises.",
+    "q": "What is the system doing?",
+    "o": [
+      "Adaptive learning",
+      "Random teaching",
+      "Manual grading",
+      "Social networking"
+    ],
+    "a": 0,
+    "e": "Automated adaptation is a typical EDM application. The learning system responds to students' performance.",
+    "s": "Slides 6, 9 · EDM and prediction"
+  },
+  {
+    "c": "Two students get the same test score, but one improves steadily while the other keeps getting worse.",
+    "q": "Why is looking at their learning history useful?",
+    "o": [
+      "It makes tests unnecessary",
+      "It guarantees higher scores",
+      "It shows how their learning changes over time",
+      "It tells us which student is happier"
+    ],
+    "a": 2,
+    "e": "Learning patterns over time provide information that a single score cannot show.",
+    "s": "Slides 5, 11 · Learning trajectories"
+  },
+  {
+    "c": "On Taiwan's 因材網 platform, a student has difficulty with division. The platform identifies weaker prerequisite knowledge and suggests where to start.",
+    "q": "Why is this learning path useful?",
+    "o": [
+      "Everyone studies the same lesson",
+      "It helps the student work on missing basic skills",
+      "It removes all difficult questions",
+      "It replaces every classroom activity"
+    ],
+    "a": 1,
+    "e": "The 因材網 case illustrates knowledge structures, adaptive diagnosis and prerequisite-based learning paths.",
+    "s": "Slides 14–15 · 因材網"
+  },
+  {
+    "c": "A school wants to identify students who may fail a course using their attendance, homework and previous scores.",
+    "q": "Which method could help the school?",
+    "o": [
+      "Prediction",
+      "Drawing a classroom map",
+      "Random selection",
+      "Changing the school timetable"
+    ],
+    "a": 0,
+    "e": "Prediction models estimate an outcome from available information. A prediction is not a certainty.",
+    "s": "Slide 9 · Prediction"
+  },
+  {
+    "c": "Student A opens six hints in 35 seconds and immediately enters the provided answer. This happens repeatedly.",
+    "q": "What behavior might this be?",
+    "o": [
+      "Independent learning",
+      "Group discussion",
+      "Gaming the system",
+      "Mastery learning"
+    ],
+    "a": 2,
+    "e": "Rapidly using hints to obtain answers may indicate gaming the system. However, logs alone cannot prove the student's intentions.",
+    "s": "Slide 18 · Student A"
+  },
+  {
+    "c": "Student B completes 22 exercises on one skill. Their accuracy stays around 40%, with no clear improvement.",
+    "q": "What might be happening?",
+    "o": [
+      "Perfect mastery",
+      "Wheel-spinning",
+      "Fast learning",
+      "Learning without effort"
+    ],
+    "a": 1,
+    "e": "Wheel-spinning describes repeated practice without meaningful progress. The student may need another explanation or different support.",
+    "s": "Slides 13, 18 · Student B"
+  },
+  {
+    "c": "Student C quickly opens hints, then spends time thinking and writes an explanation. On the next problem, they answer correctly without hints.",
+    "q": "Is the quick use of hints always bad?",
+    "o": [
+      "Yes, it always means cheating",
+      "Yes, hints stop learning",
+      "No, the student may be learning from the hints",
+      "No, so we should delete all learning logs"
+    ],
+    "a": 2,
+    "e": "The student's later explanation and independent success suggest productive learning. The sequence of actions matters.",
+    "s": "Slides 13, 18 · Student C"
+  },
+  {
+    "c": "Student D skips a learning video but correctly answers 10 questions in a short time.",
+    "q": "What is a possible explanation?",
+    "o": [
+      "The student is definitely lazy",
+      "The student may already know the lesson",
+      "The student cannot learn",
+      "The student must be punished"
+    ],
+    "a": 1,
+    "e": "Skipping content does not automatically mean disengagement. Prior knowledge or advanced ability may explain the behavior.",
+    "s": "Slides 18–19 · Student D"
+  },
+  {
+    "c": "Student E makes two early mistakes, receives one hint and then answers six questions correctly in a row.",
+    "q": "What does this pattern suggest?",
+    "o": [
+      "The student is likely improving",
+      "The student is cheating",
+      "The student should stop learning",
+      "The student has forgotten everything"
+    ],
+    "a": 0,
+    "e": "Improved performance after feedback is useful evidence of learning progress, although it does not prove complete mastery.",
+    "s": "Slide 18 · Student E"
+  },
+  {
+    "c": "Two students both spend 30 minutes on an online lesson. One makes progress; the other repeats mistakes.",
+    "q": "Does more learning time always mean more learning?",
+    "o": [
+      "Yes, always",
+      "Yes, if the student clicks many times",
+      "Only when AI is used",
+      "No, time alone cannot tell us how much was learned"
+    ],
+    "a": 3,
+    "e": "Time on task is only one indicator. Progress, task difficulty and behavior also matter.",
+    "s": "Slide 13 · Engagement and wheel-spinning"
+  },
+  {
+    "c": "An AI system labels students as 'not engaged' when they skip videos. However, some advanced students skip videos because the material is too easy.",
+    "q": "What is the main problem?",
+    "o": [
+      "The students use too much technology",
+      "The AI may misunderstand their behavior",
+      "The videos are always too long",
+      "All students should watch more videos"
+    ],
+    "a": 1,
+    "e": "A behavior-based label can be misleading. Engagement depends on context, and some groups may be unfairly judged.",
+    "s": "Slides 18–19 · Critical Discussion 1"
+  },
+  {
+    "c": "An AI model is trained mostly on data from typical learners. A twice-exceptional student learns in a different way.",
+    "q": "What should the school be careful about?",
+    "o": [
+      "The model may not work equally well for every student",
+      "Every student must learn in exactly the same way",
+      "AI can never be used in education",
+      "The student should be excluded from the system"
+    ],
+    "a": 0,
+    "e": "Under-represented learners may be misclassified. Schools should check model fairness and avoid assumptions based on limited data.",
+    "s": "Slide 19 · Algorithmic bias"
+  },
+  {
+    "c": "An AI system predicts that a student may fail a course. The prediction is accurate in many previous cases, but the system cannot explain why this particular student was flagged.",
+    "q": "What should the school do?",
+    "o": [
+      "Automatically punish the student",
+      "Ignore all predictions",
+      "Ask teachers to review more evidence before taking action",
+      "Share the risk label with the whole class"
+    ],
+    "a": 2,
+    "e": "Predictions can help identify where support may be needed, but important decisions require human oversight, fairness and privacy safeguards.",
+    "s": "Slides 9, 20 · Critical Discussion 2"
+  },
+  {
+    "c": "A school has a large amount of learning data. AI finds patterns, but teachers know the students and understand their learning needs.",
+    "q": "What is the best way to use this information?",
+    "o": [
+      "Let AI make every decision",
+      "Ignore the data and use only test scores",
+      "Replace learning theory with AI",
+      "Combine data, learning theory and teacher judgment"
+    ],
+    "a": 3,
+    "e": "The central chapter message is that big data does not replace theory. LA, EDM and human interpretation should complement one another.",
+    "s": "Slides 7, 22 · Main takeaway"
+  }
+]

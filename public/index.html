@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071321">
+    <title>Think Like a Learning Analyst | Classroom Quiz</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/host.js"></script>
+  </head>
+  <body class="host-page">
+    <div class="app-shell host-shell">
+      <header class="app-header">
+        <a class="wordmark" href="/" aria-label="Think Like a Learning Analyst home">THINK LIKE A <span>LEARNING ANALYST</span></a>
+        <div class="header-tools">
+          <span id="hostConnection" class="connection-status" role="status">Connecting…</span>
+          <button id="fullscreenButton" class="quiet-button" type="button">Fullscreen</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="hostLobby" class="host-view lobby-view" aria-labelledby="lobbyTitle">
+          <h1 id="lobbyTitle">Think Like a<br><span>Learning Analyst</span></h1>
+          <p class="lead">15 questions · 25 seconds to answer · instructor starts each question</p>
+
+          <div class="lobby-grid">
+            <section class="lobby-panel join-panel" aria-labelledby="joinTitle">
+              <h2 id="joinTitle">Join this quiz</h2>
+              <p class="small-label">Scan this QR code to join</p>
+              <img id="joinQr" class="join-qr" alt="QR code for joining this quiz">
+              <p class="small-label">Or open this link</p>
+              <a id="joinUrl" class="join-url" href="#">Connecting to the room…</a>
+              <p class="small-label code-label">Or enter the room code</p>
+              <p id="roomCode" class="room-code" aria-label="Room code">------</p>
+            </section>
+
+            <section class="lobby-panel roster-panel" aria-labelledby="studentsTitle">
+              <div class="panel-heading"><h2 id="studentsTitle">Students</h2><span id="studentCount" class="count">0</span></div>
+              <p id="emptyRoster" class="muted empty-state">Students who join will appear here.</p>
+              <ul id="studentList" class="student-list"></ul>
+            </section>
+
+          </div>
+
+          <div class="start-row">
+            <button id="startGame" class="primary-button start-button" type="button" disabled>Start Game</button>
+            <p id="startHint" class="muted">Waiting for students to join.</p>
+          </div>
+          <p id="hostMessage" class="live-message" aria-live="polite"></p>
+        </section>
+
+        <section id="hostQuestion" class="host-view question-view hidden" aria-labelledby="questionTitle">
+          <div class="question-toolbar">
+            <div>
+              <p id="questionProgress" class="progress-label">Question 1 / 15</p>
+              <div class="progress-track" aria-hidden="true"><div id="progressFill" class="progress-fill"></div></div>
+            </div>
+            <div class="timer-wrap"><span id="phaseLabel" class="phase-label">Answers open</span><output id="hostTimer" class="timer" aria-live="off">25</output></div>
+          </div>
+
+          <div class="question-copy">
+            <p id="questionContext" class="context-copy"></p>
+            <h1 id="questionTitle"></h1>
+          </div>
+
+          <div id="answerChoices" class="host-answer-list" aria-label="Answer choices"></div>
+
+          <div id="answerStatus" class="answer-status">0 answers received</div>
+
+          <footer class="question-footer">
+            <span id="hostRoundLabel" class="muted"></span>
+            <span id="hostConnectionQuestion" class="connection-status">Connected</span>
+          </footer>
+        </section>
+
+        <section id="hostRankings" class="host-view rankings-view hidden" aria-labelledby="rankingTitle">
+          <p id="roundRankingLabel" class="completion-mark"></p>
+          <h1 id="rankingTitle">Question rankings</h1>
+          <p class="lead">Review the team and individual standings. Start the next question when the class is ready.</p>
+          <section class="reveal-panel result-summary" aria-labelledby="roundResultHeading">
+            <div class="distribution-block">
+              <h2 id="roundResultHeading">How the class answered</h2>
+              <div id="roundDistributionList" class="distribution-list"></div>
+            </div>
+            <div class="explanation-block">
+              <p id="roundCorrectAnswer" class="correct-answer"></p>
+              <p id="roundExplanationText" class="explanation-text"></p>
+              <p id="roundQuestionSource" class="source-text"></p>
+            </div>
+          </section>
+          <div class="ranking-grid">
+            <section class="ranking-panel" aria-labelledby="roundTeamHeading">
+              <h2 id="roundTeamHeading">Team rankings</h2>
+              <ol id="roundTeamLeaderboard" class="leaderboard"></ol>
+            </section>
+            <section class="ranking-panel" aria-labelledby="roundIndividualHeading">
+              <h2 id="roundIndividualHeading">Individual rankings</h2>
+              <ol id="roundIndividualLeaderboard" class="leaderboard individual-leaderboard"></ol>
+            </section>
+          </div>
+          <div class="ranking-controls">
+            <button id="nextQuestion" class="primary-button start-button" type="button">Start next question</button>
+            <p id="rankingMessage" class="live-message" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section id="hostComplete" class="host-view completion-view hidden" aria-labelledby="completeTitle">
+          <p class="completion-mark">15 / 15</p>
+          <h1 id="completeTitle">Final leaderboard</h1>
+          <p class="lead">Congratulations to every team. Keep asking what the data can and cannot tell us.</p>
+          <section class="reveal-panel result-summary" aria-labelledby="finalResultHeading">
+            <div class="distribution-block">
+              <h2 id="finalResultHeading">Question 15 results</h2>
+              <div id="finalDistributionList" class="distribution-list"></div>
+            </div>
+            <div class="explanation-block">
+              <p id="finalCorrectAnswer" class="correct-answer"></p>
+              <p id="finalExplanationText" class="explanation-text"></p>
+              <p id="finalQuestionSource" class="source-text"></p>
+            </div>
+          </section>
+          <div class="ranking-grid final-ranking-grid">
+            <section class="ranking-panel" aria-labelledby="finalTeamHeading">
+              <h2 id="finalTeamHeading">Team rankings</h2>
+              <ol id="finalLeaderboard" class="leaderboard"></ol>
+            </section>
+            <section class="ranking-panel" aria-labelledby="finalIndividualHeading">
+              <h2 id="finalIndividualHeading">Individual rankings</h2>
+              <ol id="finalIndividualLeaderboard" class="leaderboard individual-leaderboard"></ol>
+            </section>
+          </div>
+          <button id="restartGame" class="primary-button" type="button">Play again</button>
+        </section>
+      </main>
+      <footer class="site-footer">One projected game screen · Students answer on their phones</footer>
+    </div>
+  </body>
+</html>

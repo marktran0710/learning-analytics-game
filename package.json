@@ -1,0 +1,14 @@
+{
+  "name": "learning-analytics-classroom-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A no-dependency live classroom quiz with one projected instructor screen and phone-based student mode.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
